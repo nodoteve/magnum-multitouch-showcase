@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/MyApplication.dir/MyApplication.cpp.o -o MyApplication  /usr/lib/libMagnumSdl2Application.a /usr/lib/libMagnumGL.so /usr/lib/libMagnum.so /usr/lib/libCorradeUtility.so /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so -ldl /usr/lib/x86_64-linux-gnu/libGLX.so /usr/lib/x86_64-linux-gnu/libOpenGL.so 
