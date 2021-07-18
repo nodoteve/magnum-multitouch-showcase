@@ -35,7 +35,7 @@ MyApplication::MyApplication(const Arguments &arguments) : Platform::Application
     imgui = ImGuiIntegration::Context(Vector2{windowSize()} / dpiScaling(),
                                       windowSize(), framebufferSize());
 
-    ImGui::GetIO().FontGlobalScale=2.f;
+    ImGui::GetIO().FontGlobalScale=3.f;
 
     // ImGui::GetIO().Fonts->Clear();
     // ImGui::GetIO().Fonts->AddFontFromFileTTF("font/SourceSansPro-Regular.ttf", 60.0f);
@@ -71,9 +71,9 @@ void MyApplication::drawEvent()
     {
         ImGui::Begin("fps");
         ImGui::SetWindowPos(ImVec2(10, 10));
-        ImGui::SetWindowSize(ImVec2(400, 100));
+        ImGui::SetWindowSize(ImVec2(500, 100));
         
-        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
+        ImGui::Text("%.3f ms/frame (%.1f FPS)",
                     1000.0 / Double(ImGui::GetIO().Framerate), Double(ImGui::GetIO().Framerate));
         ImGui::End();
 
@@ -82,11 +82,10 @@ void MyApplication::drawEvent()
         {
             auto &a = e.first;
             auto &b = e.second;
-            auto s = std::to_string(a).data();
-            ImGui::Begin(s);
-            ImGui::SetWindowPos(ImVec2(b.first, b.second));
+            auto s = std::to_string(a);
+            ImGui::Begin(s.data());
+            ImGui::SetWindowPos(ImVec2(b.first-150, b.second-150));
             ImGui::SetWindowSize(ImVec2(100, 100));
-            ImGui::Text(s);
             ImGui::End();
         }
     }
