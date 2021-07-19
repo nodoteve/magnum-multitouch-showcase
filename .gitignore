@@ -2,5 +2,8 @@
 .externalNativeBuild/
 build*/
 *.kdev4
+**/Makefile
+**/CMakeFiles
+.vscode/
 *~
-Makefile
+
